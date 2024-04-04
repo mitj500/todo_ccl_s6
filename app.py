@@ -4,11 +4,11 @@ import mysql.connector
 app = Flask(__name__)
 
 mydb = mysql.connector.connect(
-    host="db-cclpro.c7g86aoqaeg1.us-east-1.rds.amazonaws.com",
+    host="database-1.c7g86aoqaeg1.us-east-1.rds.amazonaws.com",
     user="admin",
     port=3306,
     password="12345678",
-    database="mitj"
+    database="db_ccl"
 )
 cursor = mydb.cursor()
 
