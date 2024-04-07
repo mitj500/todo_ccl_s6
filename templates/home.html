@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySQL Flask App</title>
+    <title>To-do_App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-    <h1>MySQL Flask App</h1>
+    <body> <nav class ="background_nav">
+        <ul>
+            <ul><h1>To-do_App</h1></ul>
+            <ul><h1><a href="/">Home</a></h1></ul>
+            <ul><h1><a href="/about">About</a></h1></ul>
+            <ul><h1><a href="/templates/sign_in.html">sign-in</a></h1></ul>
+        </ul>
+    </nav>
+  
     <hr>
     <div class="content">
         <form method="POST">

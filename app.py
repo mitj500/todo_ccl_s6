@@ -42,6 +42,12 @@ def delete():
         mydb.commit()
 
         return redirect(url_for('index'))
+    
+# write  a code to render the sign_in.html page
+
+@app.route("/sign_in",methods=['POST'])
+def sign_in():
+    return render_template('sign_in.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
