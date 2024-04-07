@@ -43,11 +43,25 @@ def delete():
 
         return redirect(url_for('index'))
     
-# write  a code to render the sign_in.html page
+    users = {
+    'user1': 'password1',
+    'user2': 'password2'
+}
+@app.route('/signin', methods=['POST'])
+def signin():
+    username = request.form['username']
+    password = request.form['password']
 
-@app.route("/sign_in",methods=['POST'])
-def sign_in():
-    return render_template('sign_in.html')
+    if username in users and users[username] == password:
+        # Authentication successful, redirect to a success page or perform other actions
+        return redirect(url_for('success'))
+    else:
+        # Authentication failed, redirect back to the sign-in page with an error message
+        return redirect(url_for('index', error='Invalid credentials'))
+
+@app.route('/success')
+def success():
+    return 'Sign-in successful!'
 
 if __name__ == "__main__":
     app.run(debug=True)
