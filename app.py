@@ -43,25 +43,35 @@ def delete():
 
         return redirect(url_for('index'))
     
-    users = {
-    'user1': 'password1',
-    'user2': 'password2'
-}
-@app.route('/signin', methods=['POST'])
-def signin():
-    username = request.form['username']
-    password = request.form['password']
+#     users = {
+#     'user1': 'password1',
+#     'user2': 'password2'
+# }
+# @app.route('/signin', methods=['POST'])
+# def signin():
+#     username = request.form['username']
+#     password = request.form['password']
 
-    if username in users and users[username] == password:
-        # Authentication successful, redirect to a success page or perform other actions
-        return redirect(url_for('success'))
-    else:
-        # Authentication failed, redirect back to the sign-in page with an error message
-        return redirect(url_for('index', error='Invalid credentials'))
+#     if username in users and users[username] == password:
+#         # Authentication successful, redirect to a success page or perform other actions
+#         return redirect(url_for('success'))
+#     else:
+#         # Authentication failed, redirect back to the sign-in page with an error message
+#         return redirect(url_for('index', error='Invalid credentials'))
 
-@app.route('/success')
-def success():
-    return 'Sign-in successful!'
+# @app.route('/success')
+# def success():
+#     return 'Sign-in successful!'
+
+@app.route('/about')
+def about_page():
+    return render_template("about.html")
+# connect the sign in page just render it normally
+@app.route('/sign_in')
+def sign_in():
+    return render_template("signin.html")
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
