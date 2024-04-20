@@ -72,6 +72,9 @@ def about_page():
 def sign_in():
     return render_template("signin.html")
 
+@app.route('/canva')
+def canva():
+    return render_template("canva.html")
 
 
 if __name__ == "__main__":
